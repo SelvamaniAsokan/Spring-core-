@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Car beans -->
+
+	<!-- constructor injection  rocketengine -->
+	<bean id="bmw" class="com.application.Bmw">
+	
+		<constructor-arg ref="rocketengine"></constructor-arg>
+
+	</bean>
+	
+	
+	<!-- constructor injection  rocketengine -->
+	
+	<bean id="audi" class="com.application.Audi">
+	
+		<constructor-arg ref="rocketengine"></constructor-arg>
+
+	</bean>
+
+
+	<!-- setter injection -->
+
+	<bean id="thar" class="com.application.Thar">
+
+		<property name="engine" ref="jetengine"></property>
+		
+	</bean>
+
+
+
+	<!-- Engine beans -->
+	<bean id="rocketengine" class="com.application.Rocketengine"></bean>
+	<bean id="jetengine" class="com.application.JetEngine"></bean>
+
+</beans>
